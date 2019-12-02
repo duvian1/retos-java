@@ -1,144 +1,114 @@
 <div>
-    <h1>Usuarios</h1>
+  <h1>Usuarios</h1>
 
-    <button
-      type="button"
-      mdbBtn
-      color="primary"
-      class="relative waves-light"
-      (click)="basicModal.show()"
-      mdbWavesEffect
-    >
-      Crear Usuario
-    </button>
-    <div>
-      <input type="text" id="buscar" class="form-control" mdbInput [formControl]="buscarNombreInput" />
-      <button (click) = "buscarPorNombre()">buscar</button>
-    </div>
-    
-    <table mdbTable>
-      <thead>
-        <tr>
-          <th *ngFor="let head of headElements" scope="col">{{ head }}</th>
-        </tr>
-      </thead>
-      <tbody>
-          <!--tr mdbTableCol *ngFor="let usuario of usuarios; let i = index"-->
-        <tr mdbTableCol *ngFor="let usuario of usuarios;">
-          <th scope="row">{{ usuario.id }}</th>
-          <td>{{ usuario.nombre }}</td>
-          <td>{{ usuario.apellido }}</td>
-          <td>{{ usuario.numeroDocumento}}</td>
-          <td>{{ usuario.correo}}</td>
-          <td>{{ usuario.direccion}}</td>
-          <td>{{ usuario.nombreEmpresa}}</td>
-          <td>
-            <!--mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon-->
-            <button (click)="deleteUsuario(usuario.id)">Delete</button>
-            <button routerLink = "/usuarios-edit/{{usuario.id}}">Edit</button>
-            <!--span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span-->
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>
+    Crear Usuario
+  </button>
+  <div>
+    <input type="text" id="buscar" class="form-control" mdbInput [formControl]="buscarNombreInput" />
+    <button (click)="buscarPorNombre()">buscar</button>
+  </div>
 
-    <div
-    mdbModal
-    #basicModal="mdbModal"
-    class="modal fade"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="myBasicModalLabel"
-    aria-hidden="true"
-  >
+  <table mdbTable>
+    <thead>
+      <tr>
+        <th *ngFor="let head of headElements" scope="col">{{ head }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--tr mdbTableCol *ngFor="let usuario of usuarios; let i = index"-->
+      <tr mdbTableCol *ngFor="let usuario of usuarios;">
+        <th scope="row">{{ usuario.id }}</th>
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.apellido }}</td>
+        <td>{{ usuario.numeroDocumento}}</td>
+        <td>{{ usuario.correo}}</td>
+        <td>{{ usuario.direccion}}</td>
+        <td>{{ usuario.nombreEmpresa}}</td>
+        <td>
+          <!--mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon-->
+          <button (click)="deleteUsuario(usuario.id)">Delete</button>
+          <button routerLink="/usuarios-edit/{{usuario.id}}">Edit</button>
+          <!--span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span-->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="myBasicModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button
-            type="button"
-            class="close pull-right"
-            aria-label="Close"
-            (click)="basicModal.hide()"
-          >
+          <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
             <span aria-hidden="true">×</span>
           </button>
           <h4 class="modal-title w-100" id="myModalLabel">Nuevo Usuario</h4>
         </div>
         <div class="modal-body">
-            <div class="md-form">
-                <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-            
-                <input type="text" id="nombre" class="form-control" mdbInput [formControl]="nombreInput" />
-                <label for="nombre">Nombre</label>
-            </div>
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
 
-            <!-- Apellido -->
-            <div class="md-form">
-              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-            
-              <input type="text" id="apellido" class="form-control" mdbInput [formControl]="apellidoInput" />
-              <label for="apellido">Apellido</label>
-            </div>
-            
-            <!-- Numero Documento -->
-            <div class="md-form">
-              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-            
-              <input type="number" id="numeroDocumento" class="form-control" mdbInput [formControl]="numeroDocumentoInput" />
-              <label for="numeroDocumento">numeroDocumento</label>
-            </div>
+            <input type="text" id="nombre" class="form-control" mdbInput [formControl]="nombreInput" />
+            <label for="nombre">Nombre</label>
+          </div>
 
-            <!-- correo -->
-            <div class="md-form">
-              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-            
-              <input type="email" id="correo" class="form-control" mdbInput [formControl]="correoInput" />
-              <label for="correo">correo</label>
-            </div>
+          <!-- Apellido -->
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
 
-            <!-- direccion -->
-            <div class="md-form">
-              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-            
-              <input type="text" id="direccion" class="form-control" mdbInput [formControl]="direccionInput" />
-              <label for="direccion">direccion</label>
-            </div>
+            <input type="text" id="apellido" class="form-control" mdbInput [formControl]="apellidoInput" />
+            <label for="apellido">Apellido</label>
+          </div>
+
+          <!-- Numero Documento -->
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+
+            <input type="number" id="numeroDocumento" class="form-control" mdbInput
+              [formControl]="numeroDocumentoInput" />
+            <label for="numeroDocumento">numeroDocumento</label>
+          </div>
+
+          <!-- correo -->
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+
+            <input type="email" id="correo" class="form-control" mdbInput [formControl]="correoInput" />
+            <label for="correo">correo</label>
+          </div>
+
+          <!-- direccion -->
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+
+            <input type="text" id="direccion" class="form-control" mdbInput [formControl]="direccionInput" />
+            <label for="direccion">direccion</label>
+          </div>
 
 
-            <!-- nombre de la empresa -->
-            <div class="md-form">
-                <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-              
-                <input type="text" id="nombreEmpresa" class="form-control" mdbInput [formControl]="nombreEmpresaInput" />
-                <label for="nombreEmpresa">NombreEmpresa</label>
-              </div>            
+          <!-- nombre de la empresa -->
+          <div class="md-form">
+            <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+
+            <input type="text" id="nombreEmpresa" class="form-control" mdbInput [formControl]="nombreEmpresaInput" />
+            <label for="nombreEmpresa">NombreEmpresa</label>
+          </div>
+          <!--nit empresa-->
 
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            mdbBtn
-            color="secondary"
-            class="waves-light"
-            aria-label="Close"
-            (click)="basicModal.hide()"
-            mdbWavesEffect
-          >
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+            (click)="basicModal.hide()" mdbWavesEffect>
             Cerrar
           </button>
-          <button
-            type="button"
-            mdbBtn
-            color="primary"
-            class="relative waves-light"
-            mdbWavesEffect
-            (click)="createUsuario()"
-          >
+          <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect
+            (click)="createUsuario()">
             Guardar
           </button>
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>

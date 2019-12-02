@@ -13,13 +13,13 @@ import { EditComponent } from './edit/edit.component';
 import { EditEmpleadorComponent } from './edit-empleador/edit-empleador.component';
 
 const routes: Routes = [
-    {path: 'Formulariousuario', component:FormUsuariosComponent},
-    {path: 'Formularioempleador',component:FormEmpleadorComponent},
-    {path: 'usuarios', component:UsuariosComponent},
-    {path: 'empleadores', component:EmpleadoresComponent},
-    {path: 'usuarios-edit/:id',component:EditComponent},
-    {path: 'empleadores-edit/:id',component:EditEmpleadorComponent}
-    
+    {path: 'Formulariousuario', component: FormUsuariosComponent},
+    {path: 'Formularioempleador', component: FormEmpleadorComponent},
+    {path: 'usuarios', component: UsuariosComponent},
+    {path: 'empleadores', component: EmpleadoresComponent},
+    {path: 'usuarios-edit/:id', component: EditComponent},
+    {path: 'empleadores-edit/:id',  component: EditEmpleadorComponent}
+
 ];
 
 @NgModule({

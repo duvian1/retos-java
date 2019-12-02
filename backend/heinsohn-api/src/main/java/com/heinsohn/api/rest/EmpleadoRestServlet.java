@@ -108,6 +108,7 @@ public class EmpleadoRestServlet extends HttpServlet {
 		*/
 		BufferedReader bufferedReader = request.getReader();
 		
+		
 		StringBuilder builderPayload = new StringBuilder();
 
 		String line = null;
@@ -116,7 +117,7 @@ public class EmpleadoRestServlet extends HttpServlet {
 		}
 		
 		Gson gson = new Gson();
-		
+		// Convertir el JSON a Objeto
 		Empleado empleado = gson.fromJson(builderPayload.toString(), Empleado.class);
 		empleadoEJB.insertar(empleado);
 		

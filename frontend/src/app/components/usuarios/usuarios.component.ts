@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuariosService } from "../../services/usuarios.service";
+import { UsuariosService } from '../../services/usuarios.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
@@ -11,14 +11,14 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class UsuariosComponent implements OnInit {
 
   formaUsuario: FormGroup;
-  constructor(private usuariosService: UsuariosService) { 
-  //validadores
+  constructor(private usuariosService: UsuariosService) {
+  // validadores
   this.formaUsuario = new FormGroup({
-    'nombre': new FormControl('', [Validators.required, Validators.minLength(3)])
-  })
+    ' nombre': new FormControl('', [Validators.required, Validators.minLength(3)])
+  });
   }
   public usuarios = [];
-  public headElements = ["id", "nombre","apellidos","numeroDocumento","correo","direccion","nombre empresa", "acciones"];
+  public   headElements = ['id', 'nombre', 'apellidos', 'numeroDocumento', 'correo', 'direccion', 'nombre empresa', 'acciones'];
 
   public nombreInput = new FormControl();
   public apellidoInput = new FormControl();
@@ -27,8 +27,8 @@ export class UsuariosComponent implements OnInit {
   public direccionInput = new FormControl();
   public nombreEmpresaInput = new FormControl();
   public buscarNombreInput = new FormControl();
-  
-  
+
+
 
   ngOnInit(): void {
     this.getUsuarios();
@@ -49,25 +49,25 @@ export class UsuariosComponent implements OnInit {
 
   createUsuario(): void {
     const nuevoUsuario: any = {
-      nombre: this.nombreInput.value || "",
-      apellido: this.apellidoInput.value || "",
-      numeroDocumento: this.numeroDocumentoInput.value || "",
-      correo: this.correoInput.value || "",
-      direccion: this.direccionInput.value || "",
-      nombreEmpresa: this.nombreEmpresaInput.value || "",
+      nombre: this.nombreInput.value || '',
+      apellido: this.apellidoInput.value || '',
+      numeroDocumento: this.numeroDocumentoInput.value || '',
+      correo: this.correoInput.value || '',
+      direccion: this.direccionInput.value || '',
+      nombreEmpresa: this.nombreEmpresaInput.value || '',
     };
-    console.log("click createUsuario === ", { nuevoUsuario });
+    console.log('click createUsuario === ', { nuevoUsuario });
     this.usuariosService.createUsuario(nuevoUsuario).subscribe(data => {
       console.log({ data });
       this.getUsuarios();
     });
   }
 
-  
-  //buscador
-  buscarPorNombre(): void{
+
+  // buscador
+  buscarPorNombre(): void {
     this.usuariosService.getUsuariosPorNombre(this.buscarNombreInput.value).subscribe(data => {
-      console.log('data' + "buscarPornombreUsuarios");
+      console.log('data' + 'buscarPornombreUsuarios');
       console.log({ data });
       this.usuarios = data;
     });

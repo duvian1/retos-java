@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class Empleador {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)	
 	private Long id;	
 
 	@Column(name = "emp_nombreEmpresa", nullable = false, length = 120)
@@ -21,10 +21,10 @@ public class Empleador {
 	@Column(name = "emp_digitoVerificacion", nullable = false, length = 20)
 	private String digitoVerificacion;
 	
-	@Column(name = "emp_telefonoEmpleador", nullable = false, length = 15)
+	@Column(name = "emp_telefonoEmpleador", nullable = false, length = 20)
 	private String telefonoEmpleador;
 	
-	@Column(name = "emp_correoEmpleador", nullable = false, length = 15)
+	@Column(name = "emp_correoEmpleador", nullable = false, length = 45)
 	private String correoEmpleador;
 	
 	@Column(name = "emp_direccionPrincipal")
