@@ -1,6 +1,6 @@
 <div>
         <h1>Empleador</h1>
-    
+
         <button
           type="button"
           mdbBtn
@@ -11,7 +11,7 @@
         >
           Crear Empleador
         </button>
-        <input type="text" id="buscarEmpresa" class="form-control" mdbInput [formControl]="buscarNombreEmpresaInput" />
+        <input type="text" id="buscarEmpresa" class="form-control" mdbInput [formControl]="buscarNombreEmpresaInput"  placeholder="Ingrese el Nombre de la Empresa"/>
         <button (click) = "buscarPorNombreEmpresa()">buscar</button>
         <table mdbTable>
           <thead>
@@ -33,13 +33,13 @@
                 <!--mdb-icon fas icon="trash" (click)="deleteEmpleador(empleador.id)"></mdb-icon-->
                 <button (click)="deleteEmpleador(empleador.id)">Delete</button>
                 <button routerLink = "/empleadores-edit/{{empleador.id}}">Edit</button>
-                
-                
+
+
               </td>
             </tr>
           </tbody>
         </table>
-    
+
         <div
         mdbModal
         #basicModal="mdbModal"
@@ -65,14 +65,14 @@
             <div class="modal-body">
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="text" id="nombreEmpresa" class="form-control" mdbInput [formControl]="nombreEmpresaInput" />
                     <label for="nombreEmpresa">NombreEmpresa</label>
                 </div>
                 <!-- digitoVerificacion-->
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="number" id="digitoVerificacion" class="form-control" mdbInput [formControl]="digitoVerificacionInput" />
                     <label for="digitoVerificacion">NIT</label>
                 </div>
@@ -80,14 +80,14 @@
                                 <!-- telefono-->
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="number" id="telefonoEmpleador" class="form-control" mdbInput [formControl]="telefonoEmpleadorInput" />
                     <label for="telefonoEmpleador">Telefono</label>
                 </div>
                 <!-- Correo-->
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="text" id="correoEmpleador" class="form-control" mdbInput [formControl]="correoEmpleadorInput" />
                     <label for="correoEmpleador">Correo</label>
                 </div>
@@ -95,7 +95,7 @@
                                 <!-- direccionPrincipal-->
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="text" id="direccionPrincipal" class="form-control" mdbInput [formControl]="direccionPrincipalInput" />
                     <label for="direccionPrincipal">Direccion principal</label>
                 </div>
@@ -103,7 +103,7 @@
                                 <!-- nombre del contacto-->
                 <div class="md-form">
                     <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
-                
+
                     <input type="text" id="nombreContacto" class="form-control" mdbInput [formControl]="nombreContactoInput" />
                     <label for="nombreContacto">Nombre del contacto</label>
                 </div>
@@ -135,7 +135,6 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
-    

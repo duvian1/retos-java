@@ -5,7 +5,7 @@
     Crear Usuario
   </button>
   <div>
-    <input type="text" id="buscar" class="form-control" mdbInput [formControl]="buscarNombreInput" />
+    <input type="text" id="buscar" class="form-control" mdbInput [formControl]="buscarNombreInput"  placeholder="Ingrese el Nombre del Usuarios"/>
     <button (click)="buscarPorNombre()">buscar</button>
   </div>
 
@@ -94,8 +94,6 @@
             <input type="text" id="nombreEmpresa" class="form-control" mdbInput [formControl]="nombreEmpresaInput" />
             <label for="nombreEmpresa">NombreEmpresa</label>
           </div>
-          <!--nit empresa-->
-
         </div>
         <div class="modal-footer">
           <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
